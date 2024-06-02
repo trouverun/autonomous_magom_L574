@@ -1,6 +1,6 @@
 
 # KR260 board setup 
-This document outlines how to bring up the Xilinx Kria KR260 SoC+FPGA board, which acts as the main compute unit for the autonomous loader. The easiest option is to utilize the a Linux image which contains most of the necessary components. Alternatively, the Linux image can be customized and built from scratch using Xilinx tools.
+This document outlines how to bring up the Xilinx Kria KR260 SoC+FPGA board, which acts as the main compute unit for the autonomous loader. The easiest option is to utilize a prebuilt Linux image which contains most of the necessary components. Alternatively, the Linux image can be customized and built from scratch using Xilinx tools.
 
 ## (Step 1) Preparing the Linux image and base platform files:
 ### Option 1: using the prebuilt Linux image:
@@ -58,6 +58,8 @@ xsct < create_base_platform_dt.tcl
 mv base_platform self-built/base_platform
 ```
 
+TODO: adding devmem entry to AXI SPI in the dt before ocmpliation
+
 The base platform files can now be found in "{PATH_TO_THIS_REPO}/software/kr260_platform/self-built/base_platform".
 
 </details>
@@ -106,3 +108,6 @@ mv ~/base_platform /lib/firmware/xilinx/base_platform
 ```
 
 ## (Step 3) Installing required libraries and packages on the board:
+Some of the necessary components (e.g. libfortran) are inconvenient to package in to the Linux image with petalinux/yocto, so they are installed manually using the following commands: 
+```bash
+```
