@@ -58,6 +58,8 @@ xsct < create_base_platform_dt.tcl
 mv base_platform self-built/base_platform
 ```
 
+TODO: adding devmem entry to AXI SPI in the dt before ocmpliation
+
 The base platform files can now be found in "{PATH_TO_THIS_REPO}/software/kr260_platform/self-built/base_platform".
 
 </details>
